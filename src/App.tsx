@@ -3,8 +3,8 @@ import './App.css';
 import MathlerTileGrid from "./components/MathlerTileGrid";
 import useGameEngine from "./hooks/use-game-engine";
 import TileInputForm from "./components/TileInputForm";
-import {isValidEquation} from "./mathler/Helpers";
 import toast, { Toaster } from 'react-hot-toast';
+import MathlerGame from "./mathler/MathlerGame";
 
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
 
     const onSubmitInput = (): void => {
         if (currentSubmissionRow.length !== 6) return;
-        else if (!isValidEquation(currentSubmissionRow.join(''))) {
+        else if (!MathlerGame.isValidEquation(currentSubmissionRow.join(''))) {
             console.error('Not valid equation', currentSubmissionRow.join(''));
             toast.error('You cannot submit an invalid equation.');
             return;

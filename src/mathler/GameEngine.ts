@@ -19,6 +19,7 @@ export default class GameEngine {
     };
 
     startNewGameInstance = (): MathlerGame => {
+        // in practice we would async fetch these puzzles from some external source.
         const equation = puzzles[Math.floor(Math.random() * puzzles.length)];
         const value = eval(equation);
         console.log(`Starting new game instance with eq: [${equation}] and value: [${value}]`);

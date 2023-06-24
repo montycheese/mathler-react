@@ -1,5 +1,5 @@
 // represents a game instance of Mathler
-import {MathlerTileState, MAX_SUBMISSIONS} from "./Constants";
+import {MathlerTileState, MAX_SUBMISSIONS, SUPPORTED_OPERATORS} from "./Constants";
 
 export default class MathlerGame {
     public calculation: string;
@@ -8,6 +8,10 @@ export default class MathlerGame {
     public isGameOver: boolean;
 
     constructor(calculation: string, value: number) {
+        if (!MathlerGame.isValidEquation(calculation) || eval(calculation) !== value) {
+            throw new Error('Cannot instantiate a game instance with an invalid equation.');
+        }
+
         this.calculation = calculation;
         this.value = value;
         this.submissions = [];
@@ -15,10 +19,16 @@ export default class MathlerGame {
     }
 
     submitNewRow(submission: string[]) {
-        if (this.submissions.length < MAX_SUBMISSIONS) {
-            this.submissions.push(submission);
+        if (!this.isGameOver) {
             const submissionStr = submission.join('');
-            if (this.isValidEquation(submissionStr)) {
+
+            if (!MathlerGame.isValidEquation(submissionStr)) {
+                throw new Error('Cannot submit an invalid equation.');
+            }
+
+            this.submissions.push(submission);
+
+            if (this.isCorrectSolution(submissionStr)) {
                 this.isGameOver = true;
 
                 // rearrange the solution if they found a communtative version
@@ -32,10 +42,12 @@ export default class MathlerGame {
                     this.isGameOver = true;
                 }
             }
+        } else {
+            throw new Error('Cannot submit row because game is over.')
         }
     }
 
-    isValidEquation(calculation: string): boolean {
+    isCorrectSolution(calculation: string): boolean {
         try {
             return eval(calculation) == this.value
                 && this.checkSameCharacters(calculation, this.calculation);
@@ -53,7 +65,7 @@ export default class MathlerGame {
     isGameWon(): boolean {
         if (this.submissions.length === 0) return false;
         const lastSubmittedEquationString = this.submissions[this.submissions.length - 1].join('');
-        return this.isGameOver && this.isValidEquation(lastSubmittedEquationString);
+        return this.isGameOver && this.isCorrectSolution(lastSubmittedEquationString);
     }
 
     getCharState(char: string, index: number): MathlerTileState {
@@ -100,5 +112,27 @@ export default class MathlerGame {
 
         return true;
     }
+
+    static isValidEquation(equation: string): boolean {
+        let isValid = false;
+
+        // ensure that the equation contains at least one operator.
+        for (let i = 0; i < SUPPORTED_OPERATORS.length; i++) {
+            if (equation.includes(SUPPORTED_OPERATORS[i])) {
+                isValid = true;
+                break;
+            }
+        }
+
+        try {
+            const result = eval(equation);
+            isValid = isValid && typeof result === 'number' && result >= 0;
+        } catch (error) {
+            console.debug('Error thrown while executing equation.', error);
+            isValid = false;
+        }
+        return isValid;
+    }
+
 
 }
