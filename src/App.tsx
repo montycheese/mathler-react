@@ -1,24 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import MathlerTileGrid from "./components/MathlerTileGrid";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="mt-3">
+        <div className="flex flex-basis-1/2 justify-center">
+            <h1 className="text-3xl text-zinc-50">Mathler</h1>
+        </div>
+        <div className="flex flex-basis-1/2 justify-center">
+            <span className="text-md text-zinc-50">Find the hidden calculation that equals X</span>
+        </div>
+        <MathlerTileGrid />
+
     </div>
   );
 }
