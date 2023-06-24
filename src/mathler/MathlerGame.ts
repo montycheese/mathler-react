@@ -17,9 +17,16 @@ export default class MathlerGame {
     submitNewRow(submission: string[]) {
         if (this.submissions.length < MAX_SUBMISSIONS) {
             this.submissions.push(submission);
-            console.log('submitting new row', submission)
-            if (this.isValidEquation(submission.join(''))) {
+            const submissionStr = submission.join('');
+            if (this.isValidEquation(submissionStr)) {
                 this.isGameOver = true;
+
+                // rearrange the solution if they found a communtative version
+                if (this.hasFoundCommuntativeSolution(submissionStr)) {
+                    this.submissions.pop();
+                    this.submissions.push(this.calculation.split(''));
+                }
+
             } else {
                 if (this.submissions.length === MAX_SUBMISSIONS) {
                     this.isGameOver = true;
@@ -37,6 +44,10 @@ export default class MathlerGame {
             return false;
         }
 
+    }
+
+    hasFoundCommuntativeSolution(calculation: string): boolean {
+        return calculation !== this.calculation && this.checkSameCharacters(calculation, this.calculation);
     }
 
     isGameWon(): boolean {

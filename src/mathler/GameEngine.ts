@@ -3,7 +3,8 @@ import MathlerGame from "./MathlerGame";
 const puzzles = [
     '24*2-9',
     '27*3-9',
-    '95/5+8'
+    '95/5+8',
+    '1+2+33'
 ];
 
 export default class GameEngine {
@@ -15,7 +16,7 @@ export default class GameEngine {
 
     getGameInstance = (): MathlerGame => {
         return this.currentInstance || this.startNewGameInstance();
-    }
+    };
 
     startNewGameInstance = (): MathlerGame => {
         const equation = puzzles[Math.floor(Math.random() * puzzles.length)];
