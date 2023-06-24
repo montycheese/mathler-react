@@ -21,8 +21,10 @@ export default function MathlerTile({ input, state }: MathlerTileProps) {
     }
 
     return (
-        <div className={`${bkgColorClass} rounded-md text-white grid place-items-center p-2`}>
+        <div className={`${bkgColorClass} rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100`}>
             {input}
         </div>
     );
 }
+
+MathlerTile.blank = <MathlerTile input={''} state={MathlerTileState.NO_VALUE}/>;

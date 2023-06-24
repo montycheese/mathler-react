@@ -5,15 +5,26 @@ export default class MathlerGame {
     public calculation: string;
     public value: number;
     public submissions: string[][];
+    public isGameOver: boolean;
 
     constructor(calculation: string, value: number) {
         this.calculation = calculation;
         this.value = value;
-        const submissions = [];
-        for (let i = 0; i < 6; i++) {
-            submissions.push(Array(6).fill(''))
+        //const submissions = [];
+       // for (let i = 0; i < 6; i++) {
+       //     submissions.push(Array(6).fill(''))
+       // }
+        this.submissions = []; //submissions;
+        this.isGameOver = false;
+    }
+
+    submitNewRow(submission: string[]) {
+        if (this.submissions.length < 6) {
+            this.submissions.push(submission);
+            if (this.isValidEquation(submission.join(''))) {
+                this.isGameOver = true;
+            }
         }
-        this.submissions = submissions;
     }
 
     isValidEquation(calculation: string): boolean {
