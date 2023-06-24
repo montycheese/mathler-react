@@ -24,6 +24,7 @@ function App() {
         if (currentSubmissionRow.length !== 6) return;
         else if (!isValidEquation(currentSubmissionRow.join(''))) {
             // TODO show error
+            console.error('Not valid equation', currentSubmissionRow.join(''));
             return;
         }
         gameInstance.submitNewRow(currentSubmissionRow);
@@ -31,15 +32,17 @@ function App() {
 
     };
 
-    const renderWinnerMessage = () => {
-        if (gameInstance.isGameWon()) {
-            return (
-              <div className="text-white text-xl">
-                  🎉 Well done, you've won!
-              </div>
-            );
+    const renderEndGameMessage = () => {
+        if (!gameInstance.isGameOver) {
+            return null;
         }
-        return null;
+        const msg = gameInstance.isGameWon() ? '🎉 Well done, you\'ve won!' : '😢 Sorry, better luck next time!';
+
+        return (
+            <div className="flex flex-row justify-center text-white text-xl">
+                {msg}
+            </div>
+        );
     };
 
     const renderInputElements = () => {
@@ -77,7 +80,7 @@ function App() {
         <MathlerTileGrid pendingSubmissionInputs={currentSubmissionRow} />
         <div className="mt-3">
             {renderInputElements()}
-            {renderWinnerMessage()}
+            {renderEndGameMessage()}
         </div>
 
     </div>

@@ -30,10 +30,20 @@ export default function TileInputForm({ onAdd, onDelete, currentEquation } : Til
               disabled={val.length !== 1 || !VALID_CHARS.includes(val) || currentEquation.length === MAX_CHARS_PER_ROW}
               className="text-white text-white bg-gray-900 p-2 rounded-lg disabled:bg-gray-800 hover:bg-gray-800"
               onClick={() => {
-                  if (isOperator(currentEquation[currentEquation.length-1]) && isOperator(val)) {
+                  const lastChar = currentEquation[currentEquation.length - 1];
+                  if (isOperator(lastChar) && isOperator(val)) {
+                      // two operators can not be side by side
                       console.error('Invalid input');
-                  } else if (isOperator(val) && currentEquation.length === 0) {
+                  } else if (isOperator(val) && (currentEquation.length === 0 || currentEquation.length === 5)) {
+                      // first or last char cannot be an operator
                       console.error('Invalid input');
+                  } else if (lastChar === '0' && !isOperator(val)) {
+                      // do not allow putting a number after 0
+                      console.error('Invalid input');
+                  } else if (lastChar === '/' && val === '0') {
+                      // prevent divide by 0
+                      console.error('Invalid input');
+
                   } else {
                       onAdd(val);
                       setVal('');

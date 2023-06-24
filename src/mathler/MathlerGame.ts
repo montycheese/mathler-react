@@ -1,5 +1,5 @@
 // represents a game instance of Mathler
-import {MathlerTileState} from "./Constants";
+import {MathlerTileState, MAX_SUBMISSIONS} from "./Constants";
 
 export default class MathlerGame {
     public calculation: string;
@@ -15,17 +15,28 @@ export default class MathlerGame {
     }
 
     submitNewRow(submission: string[]) {
-        if (this.submissions.length < 6) {
+        if (this.submissions.length < MAX_SUBMISSIONS) {
             this.submissions.push(submission);
+            console.log('submitting new row', submission)
             if (this.isValidEquation(submission.join(''))) {
                 this.isGameOver = true;
+            } else {
+                if (this.submissions.length === MAX_SUBMISSIONS) {
+                    this.isGameOver = true;
+                }
             }
         }
     }
 
     isValidEquation(calculation: string): boolean {
-        return eval(calculation) == this.value
-            && this.checkSameCharacters(calculation, this.calculation);
+        try {
+            return eval(calculation) == this.value
+                && this.checkSameCharacters(calculation, this.calculation);
+        } catch (error) {
+            console.error('Error while validating equation', error);
+            return false;
+        }
+
     }
 
     isGameWon(): boolean {
