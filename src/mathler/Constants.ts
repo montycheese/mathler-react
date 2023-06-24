@@ -9,3 +9,4 @@ export enum MathlerTileState {
 export const VALID_CHARS = '1234567890+-/*';
 export const SUPPORTED_OPERATORS = '+-/*';
 export const MAX_CHARS_PER_ROW = 6;
+export const MAX_TILES = 36;

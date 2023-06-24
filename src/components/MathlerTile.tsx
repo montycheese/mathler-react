@@ -27,4 +27,4 @@ export default function MathlerTile({ input, state }: MathlerTileProps) {
     );
 }
 
-MathlerTile.blank = <MathlerTile input={''} state={MathlerTileState.NO_VALUE}/>;
+MathlerTile.getBlankTile = (key: string) => <MathlerTile input="" state={MathlerTileState.NO_VALUE} key={key} />;

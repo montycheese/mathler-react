@@ -1,8 +1,7 @@
+import React from "react";
 import MathlerTile from "./MathlerTile";
-import {MathlerTileState} from "../mathler/Constants";
+import {MathlerTileState, MAX_TILES} from "../mathler/Constants";
 import useGameEngine from "../hooks/use-game-engine";
-
-const MAX_TILES = 36;
 
 type MathlerTileGridProps = {
     pendingSubmissionInputs: string[]
@@ -13,18 +12,21 @@ export default function MathlerTileGrid({ pendingSubmissionInputs }: MathlerTile
 
     const tiles = [];
 
+    let cellNum = 0;
+
     for (let i = 0; i < gameInstance.submissions.length; i++) {
         for (let j = 0; j < gameInstance.submissions[i].length; j++) {
             const tileVal = gameInstance.submissions[i][j];
             const state = gameInstance.getCharState(tileVal, j);
-            const tile = <MathlerTile input={tileVal} state={state} key={`${i}${j}`} />;
+            const tile = <MathlerTile input={tileVal} state={state} key={`${++cellNum}`} />;
             tiles.push(tile);
         }
     }
-    tiles.push(...pendingSubmissionInputs.map((val, i) => <MathlerTile input={val} state={MathlerTileState.PENDING_SUBMISSION} key={i}/>))
+    tiles.push(...pendingSubmissionInputs
+        .map((val) => <MathlerTile input={val} state={MathlerTileState.PENDING_SUBMISSION} key={++cellNum} />));
 
     while(tiles.length < MAX_TILES) {
-        tiles.push(MathlerTile.blank);
+        tiles.push(MathlerTile.getBlankTile(`${++cellNum}`));
     }
 
     return (

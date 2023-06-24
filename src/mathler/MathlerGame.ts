@@ -34,7 +34,7 @@ export default class MathlerGame {
 
     getCharState(char: string, index: number): MathlerTileState {
         if (char.length !== 1) {
-            throw new Error('Invalid char. Must be length 1');
+            throw new Error('Invalid char. Must be of length 1.');
         }
         if (this.calculation[index] === char) {
             return MathlerTileState.CORRECT_PLACE;
