@@ -10,11 +10,7 @@ export default class MathlerGame {
     constructor(calculation: string, value: number) {
         this.calculation = calculation;
         this.value = value;
-        //const submissions = [];
-       // for (let i = 0; i < 6; i++) {
-       //     submissions.push(Array(6).fill(''))
-       // }
-        this.submissions = []; //submissions;
+        this.submissions = [];
         this.isGameOver = false;
     }
 
@@ -30,6 +26,12 @@ export default class MathlerGame {
     isValidEquation(calculation: string): boolean {
         return eval(calculation) == this.value
             && this.checkSameCharacters(calculation, this.calculation);
+    }
+
+    isGameWon(): boolean {
+        if (this.submissions.length === 0) return false;
+        const lastSubmittedEquationString = this.submissions[this.submissions.length - 1].join('');
+        return this.isGameOver && this.isValidEquation(lastSubmittedEquationString);
     }
 
     getCharState(char: string, index: number): MathlerTileState {

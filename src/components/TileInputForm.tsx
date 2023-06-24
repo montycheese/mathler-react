@@ -14,7 +14,7 @@ export default function TileInputForm({ onAdd, onDelete, currentEquation } : Til
     const isOperator = (char: string) => '+-*/'.includes(char);
 
     return (
-      <div className="flex w-1/2 m-auto mt-4 justify-between">
+      <div className="flex w-1/2 m-auto mt-4 gap-x-2 justify-items-start">
           <input disabled={currentEquation.length >= MAX_CHARS_PER_ROW}
                  className="rounded-md p-2"
                  type="text"
@@ -28,7 +28,7 @@ export default function TileInputForm({ onAdd, onDelete, currentEquation } : Til
                  }}/>
           <button
               disabled={val.length !== 1 || !VALID_CHARS.includes(val) || currentEquation.length === MAX_CHARS_PER_ROW}
-              className="rounded-md text-white"
+              className="text-white text-white bg-gray-900 p-2 rounded-lg disabled:bg-gray-800 hover:bg-gray-800"
               onClick={() => {
                   if (isOperator(currentEquation[currentEquation.length-1]) && isOperator(val)) {
                       console.error('Invalid input');
@@ -40,7 +40,7 @@ export default function TileInputForm({ onAdd, onDelete, currentEquation } : Til
                   }
               }}>
               Add</button>
-          <button className="rounded-md text-white"
+          <button className="text-white text-white bg-gray-900 p-2 rounded-lg disabled:bg-gray-800 hover:bg-gray-800"
                   disabled={currentEquation.length === 0}
                   onClick={() => onDelete()}>
               Delete</button>

@@ -31,7 +31,39 @@ function App() {
 
     };
 
-    const isGameOver = gameInstance.isGameOver;
+    const renderWinnerMessage = () => {
+        if (gameInstance.isGameWon()) {
+            return (
+              <div className="text-white text-xl">
+                  🎉 Well done, you've won!
+              </div>
+            );
+        }
+        return null;
+    };
+
+    const renderInputElements = () => {
+        if (gameInstance.isGameOver) {
+            return null;
+        }
+        return (
+            <>
+                <TileInputForm
+                    onAdd={onAddNewInput}
+                    onDelete={onDeleteInput}
+                    currentEquation={currentSubmissionRow}
+                />
+                <div className="flex flex-row justify-center mt-3">
+                    <button
+                        className="text-white bg-gray-900 p-2 rounded-lg disabled:bg-gray-800 hover:bg-gray-800"
+                        onClick={onSubmitInput}
+                        disabled={currentSubmissionRow.length !== 6}>
+                        Submit row
+                    </button>
+                </div>
+            </>
+        );
+    };
 
 
   return (
@@ -43,18 +75,11 @@ function App() {
             <span className="text-md text-zinc-50">Find the hidden calculation that equals {gameInstance.value}</span>
         </div>
         <MathlerTileGrid pendingSubmissionInputs={currentSubmissionRow} />
-        {!isGameOver && <TileInputForm
-            onAdd={onAddNewInput}
-            onDelete={onDeleteInput}
-            currentEquation={currentSubmissionRow}
-        />}
-        {
-            !isGameOver && (
-                <div className="flex flex-basis-1/2 justify-center mt-3">
-                    <button className="text-white" onClick={onSubmitInput}>Submit row</button>
-                </div>
-            )
-        }
+        <div className="mt-3">
+            {renderInputElements()}
+            {renderWinnerMessage()}
+        </div>
+
     </div>
   );
 }

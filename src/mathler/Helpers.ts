@@ -13,7 +13,7 @@ export function isValidEquation(equation: string): boolean {
 
     try {
         const result = eval(equation);
-        isValid = isValid && typeof result === 'number';
+        isValid = isValid && typeof result === 'number' && result >= 0;
     } catch (error) {
         console.error(error);
     }

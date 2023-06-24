@@ -31,7 +31,7 @@ export default function MathlerTileGrid({ pendingSubmissionInputs }: MathlerTile
 
     return (
         <div className="w-1/2 m-auto">
-            <div className="grid grid-cols-6 gap-3 justify-between">
+            <div className="grid grid-cols-6 gap-2 justify-between">
                 {tiles}
             </div>
         </div>

@@ -19,9 +19,8 @@ export default class GameEngine {
 
     startNewGameInstance = (): MathlerGame => {
         const equation = puzzles[Math.floor(Math.random() * puzzles.length)];
-        console.log(equation, typeof equation);
         const value = eval(equation);
-        console.log(`Starting new game instance with ${equation} and value: ${value}`);
+        console.log(`Starting new game instance with eq: [${equation}] and value: [${value}]`);
         this.currentInstance = new MathlerGame(equation, value);
         return this.currentInstance;
     }
