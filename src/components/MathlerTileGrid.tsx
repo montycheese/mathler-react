@@ -1,15 +1,14 @@
 import React from "react";
 import MathlerTile from "./MathlerTile";
 import {MathlerTileState, MAX_TILES} from "../mathler/Constants";
-import useGameEngine from "../hooks/use-game-engine";
+import MathlerGame from "../mathler/MathlerGame";
 
 type MathlerTileGridProps = {
-    pendingSubmissionInputs: string[]
+    pendingSubmissionInputs: string[],
+    gameInstance: MathlerGame
 }
 
-export default function MathlerTileGrid({ pendingSubmissionInputs }: MathlerTileGridProps) {
-    const { gameInstance } = useGameEngine();
-
+export default function MathlerTileGrid({ pendingSubmissionInputs, gameInstance }: MathlerTileGridProps) {
     const tiles = [];
 
     let cellNum = 0;

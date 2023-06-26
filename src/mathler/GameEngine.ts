@@ -1,29 +1,20 @@
 import MathlerGame from "./MathlerGame";
-
-const puzzles = [
-    '24*2-9',
-    '27*3-9',
-    '95/5+8',
-    '1+2+33'
-];
+import MathlerClient from "../clients/MathlerClient";
 
 export default class GameEngine {
     public currentInstance: MathlerGame | null;
+    private mathlerClient: MathlerClient;
 
-    constructor() {
+    constructor(mathlerClient: MathlerClient) {
+        this.mathlerClient = mathlerClient;
         this.currentInstance = null;
     }
 
-    getGameInstance = (): MathlerGame => {
-        return this.currentInstance || this.startNewGameInstance();
-    };
-
-    startNewGameInstance = (): MathlerGame => {
-        // in practice we would async fetch these puzzles from some external source.
-        const equation = puzzles[Math.floor(Math.random() * puzzles.length)];
-        const value = eval(equation);
-        console.log(`Starting new game instance with eq: [${equation}] and value: [${value}]`);
-        this.currentInstance = new MathlerGame(equation, value);
+     startNewGameInstance = async (): Promise<MathlerGame> => {
+        const gameData = await this.mathlerClient.fetchLatestGameData();
+        const value = eval(gameData.equation);
+        console.log(`Starting new game instance with eq: [${gameData.equation}] and value: [${value}]`);
+        this.currentInstance = new MathlerGame(gameData.equation, value);
         return this.currentInstance;
     }
 
