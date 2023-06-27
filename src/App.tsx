@@ -5,6 +5,7 @@ import useGameEngine from "./hooks/use-game-engine";
 import TileInputForm from "./components/TileInputForm";
 import toast, { Toaster } from 'react-hot-toast';
 import MathlerGame from "./mathler/MathlerGame";
+import {MAX_SUBMISSIONS} from "./mathler/Constants";
 
 
 function App() {
@@ -30,10 +31,15 @@ function App() {
     };
 
     const onSubmitInput = (): void => {
-        if (currentSubmissionRow.length !== 6) return;
-        else if (!MathlerGame.isValidEquation(currentSubmissionRow.join(''))) {
-            console.error('Not valid equation', currentSubmissionRow.join(''));
+        const submissionStr = currentSubmissionRow.join('');
+        if (currentSubmissionRow.length !== MAX_SUBMISSIONS) return;
+        else if (!MathlerGame.isValidEquation(submissionStr)) {
+            console.error(`Not a valid equation, ${submissionStr}`);
             toast.error('You cannot submit an invalid equation.');
+            return;
+        } else if (eval(submissionStr) !== gameInstance!.value) {
+            console.error(`Equation does not equal ${gameInstance!.value}. ${submissionStr}`);
+            toast.error(`Equation does not equal ${gameInstance!.value}`);
             return;
         }
         gameInstance!.submitNewRow(currentSubmissionRow);
@@ -67,9 +73,9 @@ function App() {
                 />
                 <div className="flex flex-row justify-center mt-3">
                     <button
-                        className="text-white bg-gray-900 p-2 rounded-lg disabled:bg-gray-800 hover:bg-gray-800"
+                        className="text-white bg-gray-900 p-2 rounded-lg drop-shadow-md disabled:opacity-25 hover:bg-gray-800 hover:drop-shadow-xl"
                         onClick={onSubmitInput}
-                        disabled={currentSubmissionRow.length !== 6}>
+                        disabled={currentSubmissionRow.length !== MAX_SUBMISSIONS}>
                         Submit row
                     </button>
                 </div>
