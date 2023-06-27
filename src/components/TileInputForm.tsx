@@ -29,7 +29,7 @@ export default function TileInputForm({ onAdd, onDelete, currentEquation } : Til
                  }}/>
           <button
               disabled={val.length !== 1 || !VALID_CHARS.includes(val) || currentEquation.length === MAX_CHARS_PER_ROW}
-              className="text-white text-white bg-gray-900 p-2 rounded-lg disabled:bg-gray-800 hover:bg-gray-800"
+              className="text-white text-white bg-gray-900 p-2 rounded-lg drop-shadow-md disabled:opacity-25 hover:bg-gray-800 hover:drop-shadow-xl"
               onClick={() => {
                   const lastChar = currentEquation[currentEquation.length - 1];
                   if (isOperator(lastChar) && isOperator(val)) {
@@ -51,7 +51,7 @@ export default function TileInputForm({ onAdd, onDelete, currentEquation } : Til
                   }
               }}>
               Add</button>
-          <button className="text-white text-white bg-gray-900 p-2 rounded-lg disabled:bg-gray-800 hover:bg-gray-800"
+          <button className="text-white text-white bg-gray-900 p-2 rounded-lg drop-shadow-md disabled:opacity-25 hover:bg-gray-800 hover:drop-shadow-xl"
                   disabled={currentEquation.length === 0}
                   onClick={() => onDelete()}>
               Delete</button>
