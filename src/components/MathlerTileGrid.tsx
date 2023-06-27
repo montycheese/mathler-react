@@ -29,8 +29,8 @@ export default function MathlerTileGrid({ pendingSubmissionInputs, gameInstance 
     }
 
     return (
-        <div className="w-full md:w-1/2 m-auto">
-            <div className="grid grid-cols-6 gap-2 justify-between">
+        <div className="w-64 m-auto">
+            <div className="grid grid-cols-6 gap-1 justify-between">
                 {tiles}
             </div>
         </div>
