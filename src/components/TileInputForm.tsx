@@ -14,6 +14,27 @@ export default function TileInputForm({ onAdd, onDelete, currentEquation } : Til
 
     const isOperator = (char: string) => '+-*/'.includes(char);
 
+    const addVal = () => {
+        const lastChar = currentEquation[currentEquation.length - 1];
+        if (isOperator(lastChar) && isOperator(val)) {
+            // two operators can not be side by side
+            toast.error('You cannot place two operators next to each other.');
+        } else if (isOperator(val) && (currentEquation.length === 0 || currentEquation.length === 5)) {
+            // first or last char cannot be an operator
+            toast.error('You cannot place an operator in this position.');
+        } else if (lastChar === '0' && !isOperator(val)) {
+            // do not allow putting a number after 0
+            toast.error('You cannot place a number after 0.');
+        } else if (lastChar === '/' && val === '0') {
+            // prevent divide by 0
+            toast.error('You cannot divide zero.');
+
+        } else {
+            onAdd(val);
+            setVal('');
+        }
+    };
+
     return (
       <div className="flex w-full sm:w-1/2 m-auto mt-4 gap-x-2 justify-center">
           <input disabled={currentEquation.length >= MAX_CHARS_PER_ROW}
@@ -26,30 +47,17 @@ export default function TileInputForm({ onAdd, onDelete, currentEquation } : Til
                      if (VALID_CHARS.includes(e.target.value)) {
                          setVal(e.target.value)
                      }
-                 }}/>
+                 }}
+                 onKeyDown={(e) => {
+                     if (val.length > 0 && e.key === 'Enter') {
+                         addVal();
+                     }
+                 }}
+          />
           <button
               disabled={val.length !== 1 || !VALID_CHARS.includes(val) || currentEquation.length === MAX_CHARS_PER_ROW}
               className="text-white text-white bg-gray-900 p-2 rounded-lg drop-shadow-md disabled:opacity-25 hover:bg-gray-800 hover:drop-shadow-xl"
-              onClick={() => {
-                  const lastChar = currentEquation[currentEquation.length - 1];
-                  if (isOperator(lastChar) && isOperator(val)) {
-                      // two operators can not be side by side
-                      toast.error('You cannot place two operators next to each other.');
-                  } else if (isOperator(val) && (currentEquation.length === 0 || currentEquation.length === 5)) {
-                      // first or last char cannot be an operator
-                      toast.error('You cannot place an operator in this position.');
-                  } else if (lastChar === '0' && !isOperator(val)) {
-                      // do not allow putting a number after 0
-                      toast.error('You cannot place a number after 0.');
-                  } else if (lastChar === '/' && val === '0') {
-                      // prevent divide by 0
-                      toast.error('You cannot divide zero.');
-
-                  } else {
-                      onAdd(val);
-                      setVal('');
-                  }
-              }}>
+              onClick={addVal}>
               Add</button>
           <button className="text-white text-white bg-gray-900 p-2 rounded-lg drop-shadow-md disabled:opacity-25 hover:bg-gray-800 hover:drop-shadow-xl"
                   disabled={currentEquation.length === 0}
