@@ -86,13 +86,13 @@ function App() {
 
   return (
     <div className="mt-3">
-        <div className="flex flex-basis-1/2 justify-center">
+        <div className="flex basis-1/2 justify-center">
             <h1 className="text-3xl text-zinc-50">Mathler</h1>
         </div>
 
         { gameInstance && (
             <>
-                <div className="flex flex-basis-1/2 justify-center my-3">
+                <div className="flex basis-1/2 justify-center my-3">
                     <span className="text-md text-zinc-50">Find the hidden calculation that equals {gameInstance!.value}</span>
                 </div>
                 <MathlerTileGrid pendingSubmissionInputs={currentSubmissionRow} gameInstance={gameInstance} />
