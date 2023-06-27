@@ -15,7 +15,7 @@ export default function TileInputForm({ onAdd, onDelete, currentEquation } : Til
     const isOperator = (char: string) => '+-*/'.includes(char);
 
     return (
-      <div className="flex w-full sm:w-1/2 m-auto mt-4 gap-x-2 justify-items-center">
+      <div className="flex w-full sm:w-1/2 m-auto mt-4 gap-x-2 justify-center">
           <input disabled={currentEquation.length >= MAX_CHARS_PER_ROW}
                  className="rounded-md p-2"
                  type="text"
