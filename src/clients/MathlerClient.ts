@@ -12,7 +12,7 @@ export default class MathlerClient {
     }
 
     async fetchLatestGameData(): Promise<GameData> {
-        // pick a random one from the response
+        // pick a random one from the response to use for the puzzle
         try {
             const resp = await fetch(this.gameDataAPIUrl);
             const textResp = await resp.text();
