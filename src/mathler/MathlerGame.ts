@@ -128,7 +128,7 @@ export default class MathlerGame {
             const result = eval(equation);
             isValid = isValid && typeof result === 'number' && result >= 0;
         } catch (error) {
-            console.debug('Error thrown while executing equation.', error);
+            console.debug('Error thrown while executing equation.');
             isValid = false;
         }
         return isValid;

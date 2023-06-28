@@ -1,7 +1,8 @@
 import GameEngine from "../mathler/GameEngine";
 import MathlerClient from "../clients/MathlerClient";
 
-const mathlerClient = new MathlerClient('https://gist.githubusercontent.com/fredericboivin/79520252fc89cf861485f88d6492c78d/raw/66a222d51a5b3f171144d00a7afcf286efcc0245/mathler.txt');
+// @ts-ignore
+const mathlerClient = new MathlerClient(process.env.REACT_APP_GAME_DATA_API_URL);
 
 const gameEngine = new GameEngine(mathlerClient);
 
