@@ -2,6 +2,8 @@
 
 A React recreation of [Mathler](https://www.mathler.com/)
 
+View live [Demo](http://mathler.s3-website-us-east-1.amazonaws.com/)
+
 ### Steps on running locally
 
 1. Create a `.env` file locally
