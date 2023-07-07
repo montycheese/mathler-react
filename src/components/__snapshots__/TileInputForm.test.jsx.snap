@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly with empty current submissions 1`] = `
+Array [
+  <div
+    className="flex w-4/5 sm:w-1/2 m-auto mt-4 gap-x-2 justify-center bg-slate-50	rounded-md p-2 drop-shadow-2xl"
+  >
+    Input a number 0-9 or the math operation +, -, *, / to create an equation that equals the answer given.
+  </div>,
+  <div
+    className="flex w-full sm:w-1/2 m-auto mt-4 gap-x-2 justify-center"
+  >
+    <input
+      className="rounded-md p-2 drop-shadow-2xl"
+      disabled={false}
+      maxLength={1}
+      onChange={[Function]}
+      onKeyDown={[Function]}
+      placeholder="Input next value"
+      type="text"
+      value=""
+    />
+    <button
+      className="text-white text-white bg-gray-900 p-2 rounded-lg drop-shadow-md disabled:opacity-25 hover:bg-gray-800 hover:drop-shadow-xl"
+      disabled={true}
+      onClick={[Function]}
+    >
+      Add
+    </button>
+    <button
+      className="text-white text-white bg-gray-900 p-2 rounded-lg drop-shadow-md disabled:opacity-25 hover:bg-gray-800 hover:drop-shadow-xl"
+      disabled={true}
+      onClick={[Function]}
+    >
+      Delete
+    </button>
+  </div>,
+]
+`;
+
+exports[`renders correctly with full current submissions 1`] = `
+Array [
+  <div
+    className="flex w-4/5 sm:w-1/2 m-auto mt-4 gap-x-2 justify-center bg-slate-50	rounded-md p-2 drop-shadow-2xl"
+  >
+    Input a number 0-9 or the math operation +, -, *, / to create an equation that equals the answer given.
+  </div>,
+  <div
+    className="flex w-full sm:w-1/2 m-auto mt-4 gap-x-2 justify-center"
+  >
+    <input
+      className="rounded-md p-2 drop-shadow-2xl"
+      disabled={true}
+      maxLength={1}
+      onChange={[Function]}
+      onKeyDown={[Function]}
+      placeholder="Input next value"
+      type="text"
+      value=""
+    />
+    <button
+      className="text-white text-white bg-gray-900 p-2 rounded-lg drop-shadow-md disabled:opacity-25 hover:bg-gray-800 hover:drop-shadow-xl"
+      disabled={true}
+      onClick={[Function]}
+    >
+      Add
+    </button>
+    <button
+      className="text-white text-white bg-gray-900 p-2 rounded-lg drop-shadow-md disabled:opacity-25 hover:bg-gray-800 hover:drop-shadow-xl"
+      disabled={false}
+      onClick={[Function]}
+    >
+      Delete
+    </button>
+  </div>,
+]
+`;
+
+exports[`renders correctly with partial current submissions 1`] = `
+Array [
+  <div
+    className="flex w-4/5 sm:w-1/2 m-auto mt-4 gap-x-2 justify-center bg-slate-50	rounded-md p-2 drop-shadow-2xl"
+  >
+    Input a number 0-9 or the math operation +, -, *, / to create an equation that equals the answer given.
+  </div>,
+  <div
+    className="flex w-full sm:w-1/2 m-auto mt-4 gap-x-2 justify-center"
+  >
+    <input
+      className="rounded-md p-2 drop-shadow-2xl"
+      disabled={false}
+      maxLength={1}
+      onChange={[Function]}
+      onKeyDown={[Function]}
+      placeholder="Input next value"
+      type="text"
+      value=""
+    />
+    <button
+      className="text-white text-white bg-gray-900 p-2 rounded-lg drop-shadow-md disabled:opacity-25 hover:bg-gray-800 hover:drop-shadow-xl"
+      disabled={true}
+      onClick={[Function]}
+    >
+      Add
+    </button>
+    <button
+      className="text-white text-white bg-gray-900 p-2 rounded-lg drop-shadow-md disabled:opacity-25 hover:bg-gray-800 hover:drop-shadow-xl"
+      disabled={false}
+      onClick={[Function]}
+    >
+      Delete
+    </button>
+  </div>,
+]
+`;

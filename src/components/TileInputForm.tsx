@@ -1,6 +1,5 @@
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import {MAX_CHARS_PER_ROW, VALID_CHARS} from "../mathler/Constants";
-import {toast} from "react-hot-toast";
 
 type TileInputFormProps = {
     onAdd: Function,

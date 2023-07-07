@@ -69,10 +69,6 @@ export default class MathlerGame {
     }
 
     getCharStatesForRow(row: string[]): MathlerTileState[] {
-        // Use a map to track the number of occurrences a character has been detected in the
-        // submission but is in the incorrect location wrt the string.
-        // In this implementation, we decide to mark the most recent instances of a mismatch as yellow
-        // and anything after that is marked as gray.
         const charToNumInstancesCountedMap:{[id: string]: number;} = {};
 
         const charStates: MathlerTileState[] = [];
@@ -83,7 +79,7 @@ export default class MathlerGame {
                 charStates.push(MathlerTileState.CORRECT_PLACE);
             } else if (this.calculation.includes(char)) {
                 const occurrencesInString = this.calculation.split(char).length - 1;
-                const occurrencesInSubmission = row.filter(r => r === char).length;
+                const occurrencesInSubmission = row.filter(c => c === char).length;
 
                 if (occurrencesInSubmission === occurrencesInString) {
                     charStates.push(MathlerTileState.DIFFERENT_PLACE);
@@ -99,8 +95,8 @@ export default class MathlerGame {
                     } else if (occurrencesInSubmissionThatMatchExcludingCurrentIndex < occurrencesInString) {
                         // user has not correctly matched all of the instances of this character
                         // therefore we can mark this as different place
-                        // potential edge case, if there are only 1 spot, but they input 2, but both are in the wrong place.
-                        // we choose the first occurrence to be yellow and any subsequent one to be gray.
+                        // potential edge case, example: if there are only 2 spots for char "c", but they input "c" 3 times and 2 of those inputs are in the wrong place.
+                        // we choose the first incorrectly located one to be yellow and any subsequent one to be gray.
 
                         if (charToNumInstancesCountedMap[char] < occurrencesInString) {
                             charStates.push(MathlerTileState.DIFFERENT_PLACE);

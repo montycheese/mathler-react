@@ -1,0 +1,895 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a blank grid correctly 1`] = `
+<div
+  className="w-64 m-auto"
+>
+  <div
+    className="grid grid-cols-6 gap-1 justify-between"
+  >
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+  </div>
+</div>
+`;
+
+exports[`renders a completed game correctly 1`] = `
+<div
+  className="w-64 m-auto"
+>
+  <div
+    className="grid grid-cols-6 gap-1 justify-between"
+  >
+    <div
+      className="bg-green-500 zoom rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      2
+    </div>
+    <div
+      className="bg-green-500 zoom rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      4
+    </div>
+    <div
+      className="bg-green-500 zoom rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      *
+    </div>
+    <div
+      className="bg-green-500 zoom rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      2
+    </div>
+    <div
+      className="bg-green-500 zoom rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      -
+    </div>
+    <div
+      className="bg-green-500 zoom rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      9
+    </div>
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+  </div>
+</div>
+`;
+
+exports[`renders a game completed on the final round correctly 1`] = `
+<div
+  className="w-64 m-auto"
+>
+  <div
+    className="grid grid-cols-6 gap-1 justify-between"
+  >
+    <div
+      className="bg-slate-400  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      3
+    </div>
+    <div
+      className="bg-orange-500  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      9
+    </div>
+    <div
+      className="bg-slate-400  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      +
+    </div>
+    <div
+      className="bg-slate-400  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      1
+    </div>
+    <div
+      className="bg-green-500 zoom rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      -
+    </div>
+    <div
+      className="bg-slate-400  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      1
+    </div>
+    <div
+      className="bg-slate-400  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      3
+    </div>
+    <div
+      className="bg-orange-500  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      9
+    </div>
+    <div
+      className="bg-slate-400  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      +
+    </div>
+    <div
+      className="bg-green-500 zoom rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      2
+    </div>
+    <div
+      className="bg-green-500 zoom rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      -
+    </div>
+    <div
+      className="bg-orange-500  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      2
+    </div>
+    <div
+      className="bg-slate-400  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      3
+    </div>
+    <div
+      className="bg-orange-500  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      9
+    </div>
+    <div
+      className="bg-slate-400  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      +
+    </div>
+    <div
+      className="bg-slate-400  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      3
+    </div>
+    <div
+      className="bg-green-500 zoom rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      -
+    </div>
+    <div
+      className="bg-slate-400  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      3
+    </div>
+    <div
+      className="bg-slate-400  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      3
+    </div>
+    <div
+      className="bg-orange-500  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      9
+    </div>
+    <div
+      className="bg-slate-400  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      +
+    </div>
+    <div
+      className="bg-orange-500  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      4
+    </div>
+    <div
+      className="bg-green-500 zoom rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      -
+    </div>
+    <div
+      className="bg-slate-400  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      4
+    </div>
+    <div
+      className="bg-slate-400  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      3
+    </div>
+    <div
+      className="bg-orange-500  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      9
+    </div>
+    <div
+      className="bg-slate-400  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      +
+    </div>
+    <div
+      className="bg-slate-400  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      5
+    </div>
+    <div
+      className="bg-green-500 zoom rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      -
+    </div>
+    <div
+      className="bg-slate-400  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      5
+    </div>
+    <div
+      className="bg-green-500 zoom rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      2
+    </div>
+    <div
+      className="bg-green-500 zoom rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      4
+    </div>
+    <div
+      className="bg-green-500 zoom rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      *
+    </div>
+    <div
+      className="bg-green-500 zoom rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      2
+    </div>
+    <div
+      className="bg-green-500 zoom rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      -
+    </div>
+    <div
+      className="bg-green-500 zoom rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      9
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders a lost game correctly 1`] = `
+<div
+  className="w-64 m-auto"
+>
+  <div
+    className="grid grid-cols-6 gap-1 justify-between"
+  >
+    <div
+      className="bg-slate-400  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      3
+    </div>
+    <div
+      className="bg-orange-500  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      9
+    </div>
+    <div
+      className="bg-slate-400  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      +
+    </div>
+    <div
+      className="bg-slate-400  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      1
+    </div>
+    <div
+      className="bg-green-500 zoom rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      -
+    </div>
+    <div
+      className="bg-slate-400  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      1
+    </div>
+    <div
+      className="bg-slate-400  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      3
+    </div>
+    <div
+      className="bg-orange-500  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      9
+    </div>
+    <div
+      className="bg-slate-400  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      +
+    </div>
+    <div
+      className="bg-green-500 zoom rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      2
+    </div>
+    <div
+      className="bg-green-500 zoom rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      -
+    </div>
+    <div
+      className="bg-orange-500  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      2
+    </div>
+    <div
+      className="bg-slate-400  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      3
+    </div>
+    <div
+      className="bg-orange-500  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      9
+    </div>
+    <div
+      className="bg-slate-400  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      +
+    </div>
+    <div
+      className="bg-slate-400  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      3
+    </div>
+    <div
+      className="bg-green-500 zoom rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      -
+    </div>
+    <div
+      className="bg-slate-400  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      3
+    </div>
+    <div
+      className="bg-slate-400  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      3
+    </div>
+    <div
+      className="bg-orange-500  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      9
+    </div>
+    <div
+      className="bg-slate-400  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      +
+    </div>
+    <div
+      className="bg-orange-500  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      4
+    </div>
+    <div
+      className="bg-green-500 zoom rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      -
+    </div>
+    <div
+      className="bg-slate-400  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      4
+    </div>
+    <div
+      className="bg-slate-400  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      3
+    </div>
+    <div
+      className="bg-orange-500  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      9
+    </div>
+    <div
+      className="bg-slate-400  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      +
+    </div>
+    <div
+      className="bg-slate-400  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      5
+    </div>
+    <div
+      className="bg-green-500 zoom rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      -
+    </div>
+    <div
+      className="bg-slate-400  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      5
+    </div>
+    <div
+      className="bg-slate-400  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      3
+    </div>
+    <div
+      className="bg-orange-500  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      9
+    </div>
+    <div
+      className="bg-slate-400  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      +
+    </div>
+    <div
+      className="bg-slate-400  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      6
+    </div>
+    <div
+      className="bg-green-500 zoom rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      -
+    </div>
+    <div
+      className="bg-slate-400  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      6
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders an submitted but incorrect row on a grid correctly 1`] = `
+<div
+  className="w-64 m-auto"
+>
+  <div
+    className="grid grid-cols-6 gap-1 justify-between"
+  >
+    <div
+      className="bg-slate-400  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      3
+    </div>
+    <div
+      className="bg-orange-500  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      9
+    </div>
+    <div
+      className="bg-slate-400  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      +
+    </div>
+    <div
+      className="bg-slate-400  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      1
+    </div>
+    <div
+      className="bg-green-500 zoom rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      -
+    </div>
+    <div
+      className="bg-slate-400  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      1
+    </div>
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+  </div>
+</div>
+`;
+
+exports[`renders an unsubmitted row on a grid correctly 1`] = `
+<div
+  className="w-64 m-auto"
+>
+  <div
+    className="grid grid-cols-6 gap-1 justify-between"
+  >
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      2
+    </div>
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      4
+    </div>
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      *
+    </div>
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      2
+    </div>
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      -
+    </div>
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    >
+      9
+    </div>
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+    <div
+      className="bg-white  rounded-md text-black grid place-items-center p-2 w-10 h-10 hover:bg-cyan-100"
+    />
+  </div>
+</div>
+`;
