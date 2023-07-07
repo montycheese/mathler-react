@@ -14,12 +14,12 @@ export default function MathlerTileGrid({ pendingSubmissionInputs, gameInstance 
     let cellNum = 0;
 
     for (let i = 0; i < gameInstance.submissions.length; i++) {
-        for (let j = 0; j < gameInstance.submissions[i].length; j++) {
-            const tileVal = gameInstance.submissions[i][j];
-            const state = gameInstance.getCharState(tileVal, j);
-            const tile = <MathlerTile input={tileVal} state={state} key={`${++cellNum}`} />;
-            tiles.push(tile);
-        }
+
+        const submissionRow = gameInstance.submissions[i];
+        const charStates = gameInstance.getCharStatesForRow(submissionRow);
+        tiles.push(...charStates.map((state, j) => (
+            <MathlerTile input={submissionRow[j]} state={state} key={`${++cellNum}`} />
+        )));
     }
     tiles.push(...pendingSubmissionInputs
         .map((val) => <MathlerTile input={val} state={MathlerTileState.PENDING_SUBMISSION} key={++cellNum} />));

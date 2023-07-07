@@ -9,7 +9,7 @@ import {MAX_SUBMISSIONS} from "./mathler/Constants";
 
 
 function App() {
-    const { gameEngine} = useGameEngine();
+    const { gameEngine } = useGameEngine();
     const [gameInstance, setGameInstance] = useState<MathlerGame | null>(null);
     const [currentSubmissionRow, setCurrentSubmissionRow] = useState<string[]>([]);
 

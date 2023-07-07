@@ -21,7 +21,7 @@ export default class MathlerClient {
             randomEquation = randomEquation
                 .replaceAll(' ', '') // remove spaces
                 .replaceAll('–', '-'); // for some reason the minus operator in this github GIST uses an unusual unicode character
-            return Promise.resolve({equation: randomEquation});
+            return {equation: randomEquation};
         } catch (error) {
             console.error('Failed to fetch game data from API', error);
             return Promise.reject(error);

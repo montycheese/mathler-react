@@ -113,8 +113,8 @@ test('Check char state correctly returns when a value is in the correct location
     const submissionStr = '1+37-1';
     const submissionAsStrArray = submissionStr.split('');
     gameInstance.submitNewRow(submissionAsStrArray);
-
-    expect(gameInstance.getCharState('1', 0))
+    const charStates = gameInstance.getCharStatesForRow(submissionAsStrArray);
+    expect(charStates[0]) // 1
         .toEqual(MathlerTileState.CORRECT_PLACE);
 });
 
@@ -127,8 +127,12 @@ test('Check char state correctly returns when a value is correct but in the wron
     const submissionAsStrArray = submissionStr.split('');
     gameInstance.submitNewRow(submissionAsStrArray);
 
-    expect(gameInstance.getCharState('3', 0))
+    const charStates = gameInstance.getCharStatesForRow(submissionAsStrArray);
+    expect(charStates[0]) // 3
         .toEqual(MathlerTileState.DIFFERENT_PLACE);
+    expect(charStates[3]) // 1
+        .toEqual(MathlerTileState.DIFFERENT_PLACE);
+
 });
 
 test('Check char state correctly returns when a value is not found in the equation', () => {
@@ -140,6 +144,62 @@ test('Check char state correctly returns when a value is not found in the equati
     const submissionAsStrArray = submissionStr.split('');
     gameInstance.submitNewRow(submissionAsStrArray);
 
-    expect(gameInstance.getCharState('-', 2))
+    const charStates = gameInstance.getCharStatesForRow(submissionAsStrArray);
+
+    expect(charStates[2]).toEqual(MathlerTileState.INCORRECT_VALUE);
+    expect(charStates[5]).toEqual(MathlerTileState.INCORRECT_VALUE);
+
+});
+
+test('Check char state correctly marks extras of existing chars as invalid when chars are already sufficiently matched.', () => {
+    const equation = '1+33-1';
+    const value = 33;
+    const gameInstance = new MathlerGame(equation, value);
+
+    const submissionStr = '3+33-3';
+    const submissionAsStrArray = submissionStr.split('');
+    gameInstance.submitNewRow(submissionAsStrArray);
+
+
+    const charStates = gameInstance.getCharStatesForRow(submissionAsStrArray);
+
+    expect(charStates[0]) // 3
+        .toEqual(MathlerTileState.INCORRECT_VALUE);
+    expect(charStates[1]) // +
+        .toEqual(MathlerTileState.CORRECT_PLACE);
+    expect(charStates[2]) // 3
+        .toEqual(MathlerTileState.CORRECT_PLACE);
+    expect(charStates[3]) // 3
+        .toEqual(MathlerTileState.CORRECT_PLACE);
+    expect(charStates[4]) // -
+        .toEqual(MathlerTileState.CORRECT_PLACE);
+    expect(charStates[5]) // 3
+        .toEqual(MathlerTileState.INCORRECT_VALUE);
+});
+
+
+test('Check char state correctly marks extras of existing chars as invalid when sufficient chars have already been marked as DIFFERENT_PLACE', () => {
+    const equation = '11-2+8';
+    const value = 17;
+    const gameInstance = new MathlerGame(equation, value);
+
+    const submissionStr = '19-1-1';
+    const submissionAsStrArray = submissionStr.split('');
+    gameInstance.submitNewRow(submissionAsStrArray);
+
+
+    const charStates = gameInstance.getCharStatesForRow(submissionAsStrArray);
+
+    expect(charStates[0]) // 1
+        .toEqual(MathlerTileState.CORRECT_PLACE);
+    expect(charStates[1]) // 9
+        .toEqual(MathlerTileState.INCORRECT_VALUE);
+    expect(charStates[2]) // -
+        .toEqual(MathlerTileState.CORRECT_PLACE);
+    expect(charStates[3]) // 1
+        .toEqual(MathlerTileState.DIFFERENT_PLACE);
+    expect(charStates[4]) // - : (already marked as correct at index 2 so mark as incorrect, since only 1 instance of this character appears in the final solution)
+        .toEqual(MathlerTileState.INCORRECT_VALUE);
+    expect(charStates[5]) // 1 : (already marked as different_place at index 3 so mark as incorrect, since only 1 instance of this character appears in the final solution)
         .toEqual(MathlerTileState.INCORRECT_VALUE);
 });

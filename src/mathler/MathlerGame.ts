@@ -49,7 +49,7 @@ export default class MathlerGame {
 
     isCorrectSolution(calculation: string): boolean {
         try {
-            return eval(calculation) == this.value
+            return eval(calculation) === this.value
                 && this.checkSameCharacters(calculation, this.calculation);
         } catch (error) {
             console.error('Error while validating equation', error);
@@ -68,16 +68,56 @@ export default class MathlerGame {
         return this.isGameOver && this.isCorrectSolution(lastSubmittedEquationString);
     }
 
-    getCharState(char: string, index: number): MathlerTileState {
-        if (char.length !== 1) {
-            throw new Error('Invalid char. Must be of length 1.');
+    getCharStatesForRow(row: string[]): MathlerTileState[] {
+        // Use a map to track the number of occurrences a character has been detected in the
+        // submission but is in the incorrect location wrt the string.
+        // In this implementation, we decide to mark the most recent instances of a mismatch as yellow
+        // and anything after that is marked as gray.
+        const charToNumInstancesCountedMap:{[id: string]: number;} = {};
+
+        const charStates: MathlerTileState[] = [];
+        for (let i = 0; i < row.length; i++) {
+            const char = row[i];
+            charToNumInstancesCountedMap[char] = !isNaN(charToNumInstancesCountedMap[char]) ? charToNumInstancesCountedMap[char]+1 : 0;
+            if (this.calculation[i] === char) {
+                charStates.push(MathlerTileState.CORRECT_PLACE);
+            } else if (this.calculation.includes(char)) {
+                const occurrencesInString = this.calculation.split(char).length - 1;
+                const occurrencesInSubmission = row.filter(r => r === char).length;
+
+                if (occurrencesInSubmission === occurrencesInString) {
+                    charStates.push(MathlerTileState.DIFFERENT_PLACE);
+                } else {
+                    const occurrencesInSubmissionThatMatchExcludingCurrentIndex =
+                        row.filter((c, j) => {
+                            return this.calculation[j] === c && c === char && i !== j;
+                        }).length;
+                    if (occurrencesInSubmissionThatMatchExcludingCurrentIndex === occurrencesInString) {
+                        // user has submitted char correctly in the right positions.
+                        // this instance of the char is therefore not valid.
+                        charStates.push(MathlerTileState.INCORRECT_VALUE);
+                    } else if (occurrencesInSubmissionThatMatchExcludingCurrentIndex < occurrencesInString) {
+                        // user has not correctly matched all of the instances of this character
+                        // therefore we can mark this as different place
+                        // potential edge case, if there are only 1 spot, but they input 2, but both are in the wrong place.
+                        // we choose the first occurrence to be yellow and any subsequent one to be gray.
+
+                        if (charToNumInstancesCountedMap[char] < occurrencesInString) {
+                            charStates.push(MathlerTileState.DIFFERENT_PLACE);
+                        } else {
+                            charStates.push(MathlerTileState.INCORRECT_VALUE);
+                        }
+                    }
+                }
+
+            } else {
+                charStates.push(MathlerTileState.INCORRECT_VALUE);
+            }
+
         }
-        if (this.calculation[index] === char) {
-            return MathlerTileState.CORRECT_PLACE;
-        } else if (this.calculation.includes(char)) {
-            return MathlerTileState.DIFFERENT_PLACE;
-        }
-        return MathlerTileState.INCORRECT_VALUE;
+
+
+        return charStates;
     }
 
     checkSameCharacters(str1: string, str2: string) {
