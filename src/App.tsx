@@ -41,7 +41,9 @@ function App() {
     };
 
     const onAddNewInput = (val: string): void => {
-        setCurrentSubmissionRow(currentSubmissionRow.concat(val));
+        if (currentSubmissionRow.length < MAX_SUBMISSIONS) {
+            setCurrentSubmissionRow(currentSubmissionRow.concat(val));
+        }
     };
 
     const onDeleteInput  = (): void => {
