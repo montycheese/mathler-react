@@ -1,39 +1,28 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {MAX_CHARS_PER_ROW, VALID_CHARS} from "../mathler/Constants";
 import {toast} from "react-hot-toast";
 
 type TileInputFormProps = {
     onAdd: Function,
     onDelete: Function,
+    isNextCharValid: Function,
     currentEquation: string[]
 }
 
-export default function TileInputForm({ onAdd, onDelete, currentEquation } : TileInputFormProps) {
+export default function TileInputForm({ onAdd, onDelete, currentEquation, isNextCharValid } : TileInputFormProps) {
 
     const [val, setVal] = useState('');
 
-    const isOperator = (char: string) => '+-*/'.includes(char);
+
 
     const addVal = () => {
-        const lastChar = currentEquation[currentEquation.length - 1];
-        if (isOperator(lastChar) && isOperator(val)) {
-            // two operators can not be side by side
-            toast.error('You cannot place two operators next to each other.');
-        } else if (isOperator(val) && (currentEquation.length === 0 || currentEquation.length === 5)) {
-            // first or last char cannot be an operator
-            toast.error('You cannot place an operator in this position.');
-        } else if (lastChar === '0' && !isOperator(val)) {
-            // do not allow putting a number after 0
-            toast.error('You cannot place a number after 0.');
-        } else if (lastChar === '/' && val === '0') {
-            // prevent divide by 0
-            toast.error('You cannot divide zero.');
-
-        } else {
+        const isValid = isNextCharValid(val);
+        if (isValid) {
             onAdd(val);
             setVal('');
         }
     };
+
 
     return (
         <>

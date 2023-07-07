@@ -5,7 +5,7 @@ import useGameEngine from "./hooks/use-game-engine";
 import TileInputForm from "./components/TileInputForm";
 import toast, { Toaster } from 'react-hot-toast';
 import MathlerGame from "./mathler/MathlerGame";
-import {MAX_SUBMISSIONS} from "./mathler/Constants";
+import {MAX_SUBMISSIONS, SUPPORTED_OPERATORS, VALID_CHARS} from "./mathler/Constants";
 
 
 function App() {
@@ -22,11 +22,30 @@ function App() {
         run();
     }, []);
 
+    useEffect(() => {
+        document.addEventListener('keydown', handleKeyDown);
+        return () => document.removeEventListener('keydown', handleKeyDown);
+    });
+
+    const handleKeyDown = (e: any) => {
+        if (e.target.tagName === 'INPUT') return; // ignore any keystrokes made in the input form.
+        if (e.key === 'Backspace') {
+            onDeleteInput();
+        } else if (e.key === 'Enter') {
+            onSubmitInput();
+        } else {
+            if (isNextCharValid(e.key)) {
+                onAddNewInput(e.key);
+            }
+        }
+    };
+
     const onAddNewInput = (val: string): void => {
         setCurrentSubmissionRow(currentSubmissionRow.concat(val));
     };
 
     const onDeleteInput  = (): void => {
+        if (currentSubmissionRow.length === 0) return;
         setCurrentSubmissionRow(currentSubmissionRow.slice(0, currentSubmissionRow.length-1));
     };
 
@@ -45,6 +64,28 @@ function App() {
         gameInstance!.submitNewRow(currentSubmissionRow);
         setCurrentSubmissionRow([]);
 
+    };
+
+    const isNextCharValid = (char: string) => {
+        const isOperator = (char: string) => SUPPORTED_OPERATORS.includes(char);
+        let valid = false;
+        const lastChar = currentSubmissionRow[currentSubmissionRow.length - 1];
+        if (isOperator(lastChar) && isOperator(char)) {
+            // two operators can not be side by side
+            toast.error('You cannot place two operators next to each other.');
+        } else if (isOperator(char) && (currentSubmissionRow.length === 0 || currentSubmissionRow.length === 5)) {
+            // first or last char cannot be an operator
+            toast.error('You cannot place an operator in this position.');
+        } else if (lastChar === '0' && !isOperator(char)) {
+            // do not allow putting a number after 0
+            toast.error('You cannot place a number after 0.');
+        } else if (lastChar === '/' && char === '0') {
+            // prevent divide by 0
+            toast.error('You cannot divide zero.');
+        } else if (VALID_CHARS.includes(char)) {
+            valid = true;
+        }
+        return valid;
     };
 
     const renderEndGameMessage = () => {
@@ -69,6 +110,7 @@ function App() {
                 <TileInputForm
                     onAdd={onAddNewInput}
                     onDelete={onDeleteInput}
+                    isNextCharValid={isNextCharValid}
                     currentEquation={currentSubmissionRow}
                 />
                 <div className="flex flex-row justify-center mt-3">
